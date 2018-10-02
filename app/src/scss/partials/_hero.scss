@@ -1,0 +1,62 @@
+@import '_varsMain.scss';
+
+.hero {
+    width: 100%;
+    position: relative;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    @media (min-width: $screenMD) {
+        height: calc(100vh - 3.438em);
+        background: url('https://res.cloudinary.com/tripstar/image/upload/v1538424176/potm-sept/player_dribbling.png') center center no-repeat;
+        background-size: cover;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            background: rgba(0,255,133,0.6);
+        }
+
+        &::before {
+            width: 18.750em;
+            height: 28.125em;
+            top: 10%;
+            left: 0;
+        }
+
+        &::after {
+            width: 9.375em;
+            height: 28.125em;
+            top: 10%;
+            right: 0;
+        }
+
+        img {
+            display: none;
+        }
+    }
+    
+    div {
+        background: $greenElectric;
+        text-align: center;
+        box-shadow: $boxShadowUp;
+        position: relative;
+        z-index: 2;
+        padding: 1em 0;
+
+        @media (min-width: $screenMD) {
+            width: 18.063em;
+            background: $purpleDeep;
+            color: #fff;
+            text-align: left;
+            box-shadow: none;
+            position: absolute;
+            bottom: 35%;
+            left: 15%;
+            padding: 1.5em 2em;
+        }
+    }
+}

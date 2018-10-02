@@ -4,56 +4,44 @@ autoprefixer = require('gulp-autoprefixer'),
 rename = require('gulp-rename'),
 sass = require('gulp-sass'),
 livereload = require('gulp-livereload'),
-imagemin = require('gulp-imagemin'),
-pump = require('pump');
+plumber = require('gulp-plumber');
 
 // scripts task
 // uglifies, renames, livereload
 gulp.task('scripts', () => {
-        pump([
-            gulp.src('app/src/js/*.js'),
-            uglify(),
-            rename({suffix: '.min'}),
-            gulp.dest('app/dist/js'),
-            livereload()
-        ]);
+    gulp.src('app/src/js/*.js')
+        .pipe(plumber())
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('app/dist/js'))
+        .pipe(livereload());
 });
 
 // styles task
-// compiles scss, autoprefixes, renames, livereload 
+// compiles scss, autoprefixes, renames, livereload
 gulp.task('styles', () => {
-    pump([
-        gulp.src('app/src/scss/*/**.scss'),
-        sass({outputStyle: 'compressed'}),
-        autoprefixer('last 2 versions'),
-        rename({suffix: '.min'}),
-        gulp.dest('app/dist/css'),
-        livereload()
-    ]);
-});
-
-// minify images
-gulp.task('images', () => {
-    pump([
-        gulp.src('app/src/img/*'),
-        imagemin(),
-        gulp.dest('app/dist/img')
-    ]);
+    gulp.src('app/src/scss/**/*.scss')
+        .pipe(plumber())
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(autoprefixer('last 2 versions'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('app/dist/css'))
+        .pipe(livereload());
 });
 
 // watch styles, scripts tasks
 // livereload
 gulp.task('watch', () => {
-    const server = livereload({start: true});
+    livereload.listen();
     // watch tasks
     gulp.watch('app/src/scss/**/*.scss', ['styles']);
     gulp.watch('app/src/js/*.js', ['scripts']);
-    gulp.watch('app/src/img/*', ['images']);
-})
-
-gulp.task('default', () => {
-    'scripts',
-    'styles',
-    'images',
-    'watch'
 });
+
+gulp.task('default', 
+    [
+        'scripts',
+        'styles',
+        'watch'
+    ]
+);

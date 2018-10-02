@@ -1,0 +1,54 @@
+@import '_varsMain.scss';
+
+.flexContainer {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    @media (min-width: $screenMD) {
+        flex-wrap: no-wrap;
+    }
+
+    > div {
+        padding: 0 1.5em;
+
+        @media (min-width: $screenMD) {
+            padding: 0 3em;
+        }
+
+        @media (min-width: $screenLG) {
+            padding: 0 5em;
+        }
+
+        p {
+            font-size: 1.375em;
+            margin-bottom: 0;
+
+            @media (min-width: $screenMD) {
+                font-size: 1.5em;
+            }
+        }
+
+        .itemPrimary {
+            font-size: 6em;
+            padding-bottom: 32px;
+
+            @media (min-width: $screenMD) {
+                font-size: 13em;
+                line-height: 0.75em;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.itemSecondary {
+    display: inline-block;
+    font-size: 1.75em;
+    padding-bottom: 32px;
+
+    @media (min-width: $screenMD) {
+        padding-left: 2em;
+    }
+}

@@ -1,0 +1,14 @@
+// normalize
+@import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css';
+
+// vendor css
+@import 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/fullpage.min.css';
+
+// partials
+@import 'partials/_typography.scss',
+'partials/_layout.scss',
+'partials/_flexGrid.scss',
+'partials/_utility.scss',
+'partials/_header.scss',
+'partials/_hero.scss',
+'partials/_sectionInfo.scss';

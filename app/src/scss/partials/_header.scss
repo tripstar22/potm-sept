@@ -1,0 +1,14 @@
+@import '_varsMain.scss';
+
+header {
+    max-width: 100%;
+    background: $purpleDeep;
+    text-align: center;
+    box-shadow: $boxShadowDown;
+    padding: 1em 0;
+
+    img {
+        width: 13.750em;
+        display: inline-block;
+    }
+}

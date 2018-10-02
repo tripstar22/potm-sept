@@ -1,0 +1,67 @@
+@import '_varsMain.scss';
+@import '_fonts.scss';
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'fugueregular', sans-serif;
+}
+
+h1, h2 {
+    font-weight: 400;
+    margin: 0;
+}
+
+h1 {
+    color: $purpleDeep;
+    font-size: 1.35em;
+    text-transform: uppercase;
+
+    @media (min-width: $screenMD) {
+        color: $white;
+        font-size: 1.75em;
+        line-height: 1.25em;
+    }
+}
+
+h2 {
+    font-size: 1.25em;
+
+    @media (min-width: $screenMD) {
+        font-size: 2em;
+    }
+}
+
+p {
+    line-height: 1.375em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.5em;
+
+    @media (min-width: $screenMD) {
+        font-size: 3em;
+        line-height: 1.5em;
+    }
+}
+
+h4 {
+    font-size: 1.375em;
+
+    @media (min-width: $screenMD) {
+        font-size: 2.25em;
+        line-height: 1.2em;
+        letter-spacing: 1px;
+    }
+}
+
+h5 {
+
+    @media (min-width: $screenMD) {
+        font-size: 3em;
+    }
+}

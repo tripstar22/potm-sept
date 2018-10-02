@@ -1,0 +1,23 @@
+@import '_varsMain.scss';
+
+.infoGeneral > div {
+    box-shadow: $boxShadowUp;
+    position: relative;
+    z-index: 2;
+    
+    h2 {
+        color: $blueAqua;
+    }
+}
+
+.infoGeneral article {
+    box-shadow: $boxShadowDown;
+}
+
+.infoGeneral {
+
+    @media (min-width: $screenMD) {
+        background: url('https://res.cloudinary.com/tripstar/image/upload/v1538426515/potm-sept/player_goal_celebration.png') no-repeat center top;
+        background-size: cover;
+    }
+}
